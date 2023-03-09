@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope&family=PT+Sans:wght@400;700&family=Work+Sans:wght@300;400&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  font-family: "Work Sans", sans-serif;
+  color: #111111;
+}
+.registration-form-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid #f2f2f2;
+  transition: 0.3s border-color;
+}
+.registration-form-field.without-border {
+  border-bottom: none;
+}
+.registration-form-field label {
+  font-size: 12px;
+  line-height: 14px;
+  color: #7c7c7c;
+  letter-spacing: -0.3px;
+  transition: 0.3s;
+  font-weight: 200;
+}
+.registration-form-field:focus-within {
+  border-color: #5a61ed;
+}
+.registration-form-field:focus-within label {
+  color: #5a61ed;
+}
+.registration-form-field input,
+.registration-form-field select {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  transition: 0.3s;
+  margin: 6px 0 5px;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  line-height: 16px;
+  height: 16px;
+  outline: none;
+  position: relative;
+  accent-color: #5a61ed;
+}
+.without-border .registration-form-field input,
+.without-border .registration-form-field select {
+  margin-bottom: 6px;
+}
+.registration-form-field select:first-of-type {
+  margin-left: -2.5px;
+}
+.registration-form-field .group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.registration-form-field .group > label {
+  border-bottom: 1px solid #f2f2f2;
+  transition: 0.3s border-color;
+}
+.registration-form-field .group > label:focus-within {
+  border-color: #5a61ed;
+}
+.registration-form-field .radio {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.registration-form-field .radio label {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  color: #111111;
+  font-size: 14px;
+}
+.registration-form-field .radio label input {
+  margin-right: 6px;
+}
+.registration-form-field .radio label + label {
+  margin-left: 20px;
+}
+.registration-form-field, body .registration-form .main-form .row .form-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid #f2f2f2;
+  transition: 0.3s border-color;
+}
+.registration-form-field.without-border, body .registration-form .main-form .row .without-border.form-field {
+  border-bottom: none;
+}
+.registration-form-field label, body .registration-form .main-form .row .form-field label {
+  font-size: 12px;
+  line-height: 14px;
+  color: #7c7c7c;
+  letter-spacing: -0.3px;
+  transition: 0.3s;
+  font-weight: 200;
+}
+.registration-form-field:focus-within, body .registration-form .main-form .row .form-field:focus-within {
+  border-color: #5a61ed;
+}
+.registration-form-field:focus-within label, body .registration-form .main-form .row .form-field:focus-within label {
+  color: #5a61ed;
+}
+.registration-form-field input, body .registration-form .main-form .row .form-field input,
+.registration-form-field select,
+body .registration-form .main-form .row .form-field select {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  transition: 0.3s;
+  margin: 6px 0 5px;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  line-height: 16px;
+  height: 16px;
+  outline: none;
+  position: relative;
+  accent-color: #5a61ed;
+}
+.without-border .registration-form-field input, .without-border body .registration-form .main-form .row .form-field input, body .registration-form .main-form .row .without-border .form-field input,
+.without-border .registration-form-field select,
+.without-border body .registration-form .main-form .row .form-field select,
+body .registration-form .main-form .row .without-border .form-field select {
+  margin-bottom: 6px;
+}
+.registration-form-field select:first-of-type, body .registration-form .main-form .row .form-field select:first-of-type {
+  margin-left: -2.5px;
+}
+.registration-form-field .group, body .registration-form .main-form .row .form-field .group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.registration-form-field .group > label, body .registration-form .main-form .row .form-field .group > label {
+  border-bottom: 1px solid #f2f2f2;
+  transition: 0.3s border-color;
+}
+.registration-form-field .group > label:focus-within, body .registration-form .main-form .row .form-field .group > label:focus-within {
+  border-color: #5a61ed;
+}
+.registration-form-field .radio, body .registration-form .main-form .row .form-field .radio {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.registration-form-field .radio label, body .registration-form .main-form .row .form-field .radio label {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  color: #111111;
+  font-size: 14px;
+}
+.registration-form-field .radio label input, body .registration-form .main-form .row .form-field .radio label input {
+  margin-right: 6px;
+}
+.registration-form-field .radio label + label, body .registration-form .main-form .row .form-field .radio label + label {
+  margin-left: 20px;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #f4f5fc;
+  padding-top: 60px;
+}
+body .registration-form {
+  width: 665px;
+  height: 481px;
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+}
+body .registration-form .form-name {
+  background-color: #5a61ed;
+  width: 138px;
+  height: 100%;
+  position: relative;
+}
+body .registration-form .form-name h1 {
+  font-family: "PT Sans", sans-serif;
+  position: absolute;
+  font-size: 49px;
+  line-height: 63px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  writing-mode: vertical-lr;
+  color: #ffffff;
+  bottom: 22px;
+  left: 70px;
+  transform: rotate(-180deg);
+}
+body .registration-form .main-form {
+  padding: 39px 22px 33px 20px;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+body .registration-form .main-form .background {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+body .registration-form .main-form .header {
+  font-size: 22px;
+  line-height: 25px;
+  letter-spacing: -0.46px;
+  margin-top: 1px;
+}
+body .registration-form .main-form .sub-header {
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  letter-spacing: -0.35px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+body .registration-form .main-form .row {
+  display: flex;
+  margin-top: 16px;
+}
+body .registration-form .main-form .row .form-field {
+  z-index: 1;
+}
+body .registration-form .main-form .row .form-field + .form-field {
+  margin-left: 13px;
+}
+body .registration-form .main-form .footer {
+  margin-top: auto;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+body .registration-form .main-form .footer span {
+  letter-spacing: -0.2px;
+  font-size: 13px;
+  line-height: 15px;
+  margin-bottom: 11px;
+  display: block;
+  height: fit-content;
+}
+body .registration-form .main-form .footer span a {
+  color: #5a61ed;
+}
+body .registration-form .main-form .footer .submit {
+  height: 32px;
+  border-radius: 0;
+  border: 0;
+  outline: none;
+  color: white;
+  background-color: #5a61ed;
+  width: 154px;
+  margin-right: -1px;
+  font-size: 14px;
+  cursor: pointer;
+}
+body .registration-form .main-form .footer .submit:hover, body .registration-form .main-form .footer .submit:focus {
+  background-color: #000dff;
+}
+body .registration-form .main-form .footer .submit:active {
+  background-color: rgba(90, 97, 237, 0.3960784314);
+}
+body .registration-form .main-form .thanks {
+  padding-left: 43px;
+  margin-top: 178px;
+}
+body .registration-form .main-form .thanks h2 {
+  margin: 0;
+  letter-spacing: -1.3px;
+}
+body .registration-form .main-form .thanks p {
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 9px;
+  letter-spacing: -0.3px;
+}
