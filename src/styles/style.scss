@@ -1,4 +1,124 @@
+@import "form-field";
 body {
-	background-color: red;
-	padding: auto;
+	min-height: 100vh;
+	background-color: #f4f5fc;
+	padding-top: 60px;
+	.registration-form {
+		width: 665px;
+		height: 481px;
+		margin: 0 auto;
+		background-color: white;
+		display: flex;
+
+		.form-name {
+			background-color: #5a61ed;
+			width: 138px;
+			height: 100%;
+			position: relative;
+			h1 {
+				font-family: "PT Sans", sans-serif;
+				position: absolute;
+				font-size: 49px;
+				line-height: 63px;
+				font-weight: 400;
+				letter-spacing: 0.5px;
+				writing-mode: vertical-lr;
+				color: #ffffff;
+				bottom: 22px;
+				left: 70px;
+				transform: rotate(-180deg);
+			}
+		}
+		.main-form {
+			padding: 39px 22px 33px 20px;
+			position: relative;
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			.background {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				z-index: 0;
+				pointer-events: none;
+			}
+			.header {
+				font-size: 22px;
+				line-height: 25px;
+				letter-spacing: -0.46px;
+				margin-top: 1px;
+			}
+			.sub-header {
+				font-size: 14px;
+				line-height: 16px;
+				letter-spacing: 0px;
+				letter-spacing: -0.35px;
+				font-weight: 400;
+				margin-bottom: 4px;
+			}
+			.row {
+				display: flex;
+				margin-top: 16px;
+				.form-field {
+					@extend .registration-form-field;
+					z-index: 1;
+					& + .form-field {
+						margin-left: 13px;
+					}
+				}
+			}
+			.footer {
+				margin-top: auto;
+				z-index: 1;
+				position: relative;
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-end;
+				span {
+					letter-spacing: -0.2px;
+					font-size: 13px;
+					line-height: 15px;
+					margin-bottom: 11px;
+					display: block;
+					height: fit-content;
+					a {
+						color: #5a61ed;
+					}
+				}
+				.submit {
+					height: 32px;
+					border-radius: 0;
+					border: 0;
+					outline: none;
+					color: white;
+					background-color: #5a61ed;
+					width: 154px;
+					margin-right: -1px;
+					font-size: 14px;
+					cursor: pointer;
+					&:hover,
+					&:focus {
+						background-color: #000dff;
+					}
+					&:active {
+						background-color: #5a61ed65;
+					}
+				}
+			}
+			.thanks {
+				padding-left: 43px;
+				margin-top: 178px;
+				h2 {
+					margin: 0;
+					letter-spacing: -1.3px;
+				}
+				p {
+					font-size: 14px;
+					line-height: 16px;
+					margin-top: 9px;
+					letter-spacing: -0.3px;
+				}
+			}
+		}
+	}
 }

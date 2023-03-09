@@ -1,0 +1,75 @@
+.registration-form-field {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	border-bottom: 1px solid #f2f2f2;
+	transition: 0.3s border-color;
+	&.without-border {
+		border-bottom: none;
+	}
+	label {
+		font-size: 12px;
+		line-height: 14px;
+		color: #7c7c7c;
+		letter-spacing: -0.3px;
+		transition: 0.3s;
+        font-weight: 200;
+	}
+	&:focus-within {
+		border-color: #5a61ed;
+	}
+	&:focus-within label {
+		color: #5a61ed;
+	}
+	input,
+	select {
+		background-color: transparent;
+		border: 0;
+		padding: 0;
+		transition: 0.3s;
+		margin: 6px 0 5px;
+		letter-spacing: 0.5px;
+		font-size: 14px;
+		line-height: 16px;
+		height: 16px;
+		outline: none;
+		position: relative;
+		accent-color: #5a61ed;
+		.without-border & {
+			margin-bottom: 6px;
+		}
+	}
+	select:first-of-type {
+		margin-left: -2.5px;
+	}
+	.group {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		& > label {
+			border-bottom: 1px solid #f2f2f2;
+			transition: 0.3s border-color;
+		}
+		& > label:focus-within {
+			border-color: #5a61ed;
+		}
+	}
+	.radio {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		label {
+            font-weight: 400;
+			display: flex;
+			align-items: center;
+			color: #111111;
+			font-size: 14px;
+			input {
+				margin-right: 6px;
+			}
+		}
+		label + label {
+			margin-left: 20px;
+		}
+	}
+}

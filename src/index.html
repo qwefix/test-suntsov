@@ -5,10 +5,99 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Hramchenko test</title>
-        <script src="./bundle.js"></script>
-        <link rel="stylesheet" href="./style.css">
+		<script src="./bundle.js" defer></script>
+		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
-		Hello from me
+		<form class="registration-form">
+			<aside class="form-name">
+				<h1>Sign up</h1>
+			</aside>
+			<main class="main-form" id="main-form">
+				<img class="background" src="./assets/UserBg.svg" alt="background" />
+				<h2 class="header">New user?</h2>
+				<h3 class="sub-header">Use the form below to create your account.</h3>
+				<div class="row">
+					<div class="form-field">
+						<label for="first-name">First Name</label>
+						<input autocomplete="given-name" type="text" id="first-name" />
+					</div>
+					<div class="form-field">
+						<label for="last-name">Last Name</label>
+						<input autocomplete="family-name" type="text" id="last-name" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-field">
+						<label for="nationality">Nationality</label>
+						<select type="text" id="nationality">
+							<option value="dog">American</option>
+							<option value="cat">Albanian</option>
+							<option value="hamster">Belorussian</option>
+						</select>
+					</div>
+					<div class="form-field">
+						<label for="email">Email</label>
+						<input autocomplete="email" type="text" id="email" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-field without-border">
+						<label for="last-name">Date of Birth</label>
+						<div class="group">
+							<label>
+								<select name="day" id="day"></select>
+							</label>
+							<label>
+								<select name="month" id="month"></select>
+							</label>
+							<label>
+								<select name="year" id="year"></select>
+							</label>
+						</div>
+					</div>
+					<div class="form-field gender">
+						<label for="Gender">Gender</label>
+						<div class="radio">
+							<label>
+								<input type="radio" name="Gender" />
+								Male
+							</label>
+							<label>
+								<input type="radio" name="Gender" />
+								Female
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-field">
+						<label for="password">Password</label>
+						<input autocomplete="new-password" type="password" id="password" />
+					</div>
+					<div class="form-field">
+						<label for="confirm-password">Confirm Password</label>
+						<input
+							autocomplete="new-password"
+							type="password"
+							id="confirm-password"
+						/>
+					</div>
+				</div>
+				<footer class="footer">
+					<span> Have an account? <a href="">Login</a> </span>
+					<button class="submit" id="submit">Complete Signup</button>
+				</footer>
+			</main>
+			<template id="done-template">
+                <div class="thanks">
+                    <h2>Thank You!</h2>
+                    <p>you registered!</p>
+                </div>
+				<footer class="footer">
+					<span> Have an account? <a href="">Login</a> </span>
+				</footer>
+			</template>
+		</form>
 	</body>
 </html>
