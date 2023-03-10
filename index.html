@@ -31,19 +31,20 @@
 					<div class="form-field">
 						<label for="nationality">Nationality</label>
 						<select id="nationality">
-							<option value="dog">American</option>
-							<option value="cat">Albanian</option>
-							<option value="hamster">Belorussian</option>
+							<option value="American">American</option>
+							<option value="Albanian">Albanian</option>
+							<option value="Belorussian">Belorussian</option>
 						</select>
 					</div>
 					<div class="form-field">
-						<label for="email">Email</label>
+						<label for="email">E-mail</label>
 						<input autocomplete="email" type="text" id="email" />
+						<label for="email" class="alert-message"> Email is wrong </label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="form-field without-border">
-						<label for="last-name">Date of Birth</label>
+						<label>Date of Birth</label>
 						<div class="group">
 							<label>
 								<select name="day" id="day"></select>
@@ -60,7 +61,7 @@
 						<label>Gender</label>
 						<div class="radio">
 							<label>
-								<input type="radio" name="Gender" />
+								<input type="radio" name="Gender" checked="checked" />
 								Male
 							</label>
 							<label>
@@ -74,6 +75,13 @@
 					<div class="form-field">
 						<label for="password">Password</label>
 						<input autocomplete="new-password" type="password" id="password" />
+						<label for="password" class="req-message">
+							Checklist <br />
+							<span class="point" id="pass-length">minimal length - 8 symbols </span><br />
+							<span class="point" id="pass-up">uppercase chars</span><br />
+							<span class="point" id="pass-low">lowercase chars</span><br />
+							<span class="point" id="pass-num">numbers</span><br />
+						</label>
 					</div>
 					<div class="form-field">
 						<label for="confirm-password">Confirm Password</label>

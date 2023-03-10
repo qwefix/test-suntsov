@@ -12,6 +12,7 @@
   width: 100%;
   border-bottom: 1px solid #f2f2f2;
   transition: 0.3s border-color;
+  position: relative;
 }
 .registration-form-field.without-border {
   border-bottom: none;
@@ -35,12 +36,11 @@
   background-color: transparent;
   border: 0;
   padding: 0;
-  transition: 0.3s;
-  margin: 6px 0 5px;
+  margin: 5px 0 4px;
   letter-spacing: 0.5px;
   font-size: 14px;
   line-height: 16px;
-  height: 16px;
+  height: 18px;
   outline: none;
   position: relative;
   accent-color: #5a61ed;
@@ -82,12 +82,50 @@
 .registration-form-field .radio label + label {
   margin-left: 20px;
 }
+.registration-form-field .alert-message, .registration-form-field .req-message {
+  pointer-events: none;
+  background-color: #f2dede;
+  color: #ff2222;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  display: block;
+  width: 100%;
+  line-height: 20px;
+  padding: 0 10px;
+  overflow: hidden;
+  background: #292f35;
+  transition: transform 0.3s;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+.registration-form-field .alert-message .point, .registration-form-field .req-message .point {
+  color: #ff2222;
+}
+.registration-form-field .alert-message .point.correct, .registration-form-field .req-message .point.correct {
+  color: green;
+}
+.registration-form-field:focus-within .req-message {
+  transform: scaleY(1);
+}
+.registration-form-field[aria-invalid=true] {
+  border-bottom: 2px solid #ff2222;
+}
+.registration-form-field[aria-invalid=true] input {
+  color: #ff2222;
+  margin-bottom: 3px;
+}
+.registration-form-field[aria-invalid=true] .alert-message {
+  transform: scaleY(1);
+}
 .registration-form-field, body .registration-form .main-form .row .form-field {
   display: flex;
   flex-direction: column;
   width: 100%;
   border-bottom: 1px solid #f2f2f2;
   transition: 0.3s border-color;
+  position: relative;
 }
 .registration-form-field.without-border, body .registration-form .main-form .row .without-border.form-field {
   border-bottom: none;
@@ -112,12 +150,11 @@ body .registration-form .main-form .row .form-field select {
   background-color: transparent;
   border: 0;
   padding: 0;
-  transition: 0.3s;
-  margin: 6px 0 5px;
+  margin: 5px 0 4px;
   letter-spacing: 0.5px;
   font-size: 14px;
   line-height: 16px;
-  height: 16px;
+  height: 18px;
   outline: none;
   position: relative;
   accent-color: #5a61ed;
@@ -161,11 +198,55 @@ body .registration-form .main-form .row .without-border .form-field select {
 .registration-form-field .radio label + label, body .registration-form .main-form .row .form-field .radio label + label {
   margin-left: 20px;
 }
+.registration-form-field .alert-message, body .registration-form .main-form .row .form-field .alert-message, .registration-form-field .req-message, body .registration-form .main-form .row .form-field .req-message {
+  pointer-events: none;
+  background-color: #f2dede;
+  color: #ff2222;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  display: block;
+  width: 100%;
+  line-height: 20px;
+  padding: 0 10px;
+  overflow: hidden;
+  background: #292f35;
+  transition: transform 0.3s;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+.registration-form-field .alert-message .point, body .registration-form .main-form .row .form-field .alert-message .point, .registration-form-field .req-message .point, body .registration-form .main-form .row .form-field .req-message .point {
+  color: #ff2222;
+}
+.registration-form-field .alert-message .point.correct, body .registration-form .main-form .row .form-field .alert-message .point.correct, .registration-form-field .req-message .point.correct, body .registration-form .main-form .row .form-field .req-message .point.correct {
+  color: green;
+}
+.registration-form-field:focus-within .req-message, body .registration-form .main-form .row .form-field:focus-within .req-message {
+  transform: scaleY(1);
+}
+.registration-form-field[aria-invalid=true], body .registration-form .main-form .row [aria-invalid=true].form-field {
+  border-bottom: 2px solid #ff2222;
+}
+.registration-form-field[aria-invalid=true] input, body .registration-form .main-form .row [aria-invalid=true].form-field input {
+  color: #ff2222;
+  margin-bottom: 3px;
+}
+.registration-form-field[aria-invalid=true] .alert-message, body .registration-form .main-form .row [aria-invalid=true].form-field .alert-message {
+  transform: scaleY(1);
+}
 
 body {
   min-height: 100vh;
   background-color: #f4f5fc;
-  padding-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 700px) {
+  body {
+    padding: 20px;
+  }
 }
 body .registration-form {
   width: 665px;
@@ -174,10 +255,15 @@ body .registration-form {
   background-color: white;
   display: flex;
 }
+@media (max-width: 700px) {
+  body .registration-form {
+    height: unset;
+    flex-direction: column;
+  }
+}
 body .registration-form .form-name {
   background-color: #5a61ed;
   width: 138px;
-  height: 100%;
   position: relative;
 }
 body .registration-form .form-name h1 {
@@ -192,6 +278,17 @@ body .registration-form .form-name h1 {
   bottom: 22px;
   left: 70px;
   transform: rotate(-180deg);
+}
+@media (max-width: 700px) {
+  body .registration-form .form-name {
+    width: unset;
+  }
+  body .registration-form .form-name h1 {
+    position: static;
+    writing-mode: initial;
+    transform: none;
+    padding: 10px;
+  }
 }
 body .registration-form .main-form {
   padding: 39px 22px 33px 20px;
@@ -231,6 +328,17 @@ body .registration-form .main-form .row .form-field {
 body .registration-form .main-form .row .form-field + .form-field {
   margin-left: 13px;
 }
+@media (max-width: 700px) {
+  body .registration-form .main-form .row {
+    flex-direction: column;
+  }
+  body .registration-form .main-form .row .form-field {
+    margin-top: 13px;
+  }
+  body .registration-form .main-form .row .form-field + .form-field {
+    margin-left: 0;
+  }
+}
 body .registration-form .main-form .footer {
   margin-top: auto;
   z-index: 1;
@@ -267,6 +375,11 @@ body .registration-form .main-form .footer .submit:hover, body .registration-for
 }
 body .registration-form .main-form .footer .submit:active {
   background-color: rgba(90, 97, 237, 0.3960784314);
+}
+@media (max-width: 700px) {
+  body .registration-form .main-form .footer {
+    flex-direction: column;
+  }
 }
 body .registration-form .main-form .thanks {
   padding-left: 43px;
