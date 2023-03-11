@@ -98,7 +98,6 @@ submitButton.addEventListener("click", (e) => {
 	if (Object.values(errors).includes(true)) {
 		submitButton.classList.add("shake");
 		setTimeout(() => submitButton.classList.remove("shake"), 600);
-
 		return;
 	}
 

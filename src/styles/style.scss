@@ -58,7 +58,25 @@ body {
 				bottom: 0;
 				right: 0;
 				z-index: 0;
+				overflow: hidden;
 				pointer-events: none;
+				img {
+					display: block;
+				}
+
+				&::after {
+					content: " ";
+					display: block;
+					background: white;
+					height: 200%;
+					width: 200%;
+					bottom: 0;
+					right: 0;
+					transform: rotate(0deg);
+					transform-origin: bottom right;
+					position: absolute;
+					animation: bg-user 3.5s forwards ease-in;
+				}
 			}
 			.header {
 				font-size: 22px;
@@ -171,5 +189,13 @@ body {
 	}
 	100% {
 		transform: translateX(0px);
+	}
+}
+@keyframes bg-user {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(90deg);
 	}
 }
