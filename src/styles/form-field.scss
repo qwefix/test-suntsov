@@ -1,7 +1,8 @@
+@import "mixins";
 .registration-form-field {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	width: calc((100% - 13px) / 2);
 	border-bottom: 1px solid #f2f2f2;
 	transition: 0.3s border-color;
 	position: relative;
@@ -18,8 +19,9 @@
 		letter-spacing: -0.3px;
 		transition: 0.3s;
 		font-weight: 200;
+		@include ellipsis;
+		max-width: 100%;
 	}
-
 	input,
 	select {
 		background-color: transparent;

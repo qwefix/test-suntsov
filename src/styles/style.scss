@@ -1,4 +1,6 @@
 @import "form-field";
+@import "mixins";
+
 body {
 	min-height: 100vh;
 	background-color: #f4f5fc;
@@ -36,6 +38,9 @@ body {
 				bottom: 22px;
 				left: 70px;
 				transform: rotate(-180deg);
+				@include ellipsis;
+				max-height: 80%;
+				max-width: 100%;
 			}
 			@media (max-width: 700px) {
 				width: unset;
@@ -53,6 +58,7 @@ body {
 			flex-grow: 1;
 			display: flex;
 			flex-direction: column;
+			width: calc(100% - 138px);
 			.background {
 				position: absolute;
 				bottom: 0;
@@ -83,6 +89,8 @@ body {
 				line-height: 25px;
 				letter-spacing: -0.46px;
 				margin-top: 1px;
+				@include ellipsis;
+				max-width: 100%;
 			}
 			.sub-header {
 				font-size: 14px;
@@ -91,6 +99,8 @@ body {
 				letter-spacing: -0.35px;
 				font-weight: 400;
 				margin-bottom: 4px;
+				@include ellipsis;
+				max-width: 450px;
 			}
 			.row {
 				display: flex;
@@ -126,6 +136,8 @@ body {
 					margin-bottom: 11px;
 					display: block;
 					height: fit-content;
+					@include ellipsis;
+					max-width: 50%;
 					a {
 						color: #5a61ed;
 					}
@@ -163,12 +175,16 @@ body {
 				h2 {
 					margin: 0;
 					letter-spacing: -1.3px;
+					@include ellipsis;
+					max-width: 100%;
 				}
 				p {
 					font-size: 14px;
 					line-height: 16px;
 					margin-top: 9px;
 					letter-spacing: -0.3px;
+					@include ellipsis;
+					max-width: 100%;
 				}
 			}
 		}
