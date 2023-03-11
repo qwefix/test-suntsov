@@ -95,7 +95,12 @@ password.addEventListener("input", () => {
 submitButton.addEventListener("click", (e) => {
 	e.preventDefault();
 
-	if (Object.values(errors).includes(true)) return;
+	if (Object.values(errors).includes(true)) {
+		submitButton.classList.add("shake");
+		setTimeout(() => submitButton.classList.remove("shake"), 600);
+
+		return;
+	}
 
 	//all inputs good good
 	const formData = new FormData(form);

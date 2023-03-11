@@ -5,6 +5,9 @@
 	border-bottom: 1px solid #f2f2f2;
 	transition: 0.3s border-color;
 	position: relative;
+	opacity: 0;
+	animation: appear 0.5s forwards;
+	animation-delay: var(--appearanceDelay);
 	&.without-border {
 		border-bottom: none;
 	}
@@ -105,7 +108,8 @@
 			transform: scaleY(1);
 		}
 	}
-	&:focus-within,&:focus-within[aria-invalid="true"] {
+	&:focus-within,
+	&:focus-within[aria-invalid="true"] {
 		border-bottom: 1px solid #5a61ed;
 		input {
 			color: #111111;
@@ -117,5 +121,13 @@
 	}
 	&:focus-within label {
 		color: #5a61ed;
+	}
+}
+@keyframes appear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
