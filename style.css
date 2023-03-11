@@ -9,10 +9,13 @@
 .registration-form-field {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: calc((100% - 13px) / 2);
   border-bottom: 1px solid #f2f2f2;
   transition: 0.3s border-color;
   position: relative;
+  opacity: 0;
+  animation: appear 0.5s forwards;
+  animation-delay: var(--appearanceDelay);
 }
 .registration-form-field.without-border {
   border-bottom: none;
@@ -24,12 +27,10 @@
   letter-spacing: -0.3px;
   transition: 0.3s;
   font-weight: 200;
-}
-.registration-form-field:focus-within {
-  border-color: #5a61ed;
-}
-.registration-form-field:focus-within label {
-  color: #5a61ed;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
 }
 .registration-form-field input,
 .registration-form-field select {
@@ -82,7 +83,8 @@
 .registration-form-field .radio label + label {
   margin-left: 20px;
 }
-.registration-form-field .alert-message, .registration-form-field .req-message {
+.registration-form-field .alert-message,
+.registration-form-field .req-message {
   pointer-events: none;
   background-color: #f2dede;
   color: #ff2222;
@@ -100,10 +102,12 @@
   transform: scaleY(0);
   transform-origin: bottom;
 }
-.registration-form-field .alert-message .point, .registration-form-field .req-message .point {
+.registration-form-field .alert-message .point,
+.registration-form-field .req-message .point {
   color: #ff2222;
 }
-.registration-form-field .alert-message .point.correct, .registration-form-field .req-message .point.correct {
+.registration-form-field .alert-message .point.correct,
+.registration-form-field .req-message .point.correct {
   color: green;
 }
 .registration-form-field:focus-within .req-message {
@@ -119,13 +123,39 @@
 .registration-form-field[aria-invalid=true] .alert-message {
   transform: scaleY(1);
 }
+.registration-form-field:focus-within, .registration-form-field:focus-within[aria-invalid=true] {
+  border-bottom: 1px solid #5a61ed;
+}
+.registration-form-field:focus-within input, .registration-form-field:focus-within[aria-invalid=true] input {
+  color: #111111;
+  margin-bottom: 4px;
+}
+.registration-form-field:focus-within .alert-message, .registration-form-field:focus-within[aria-invalid=true] .alert-message {
+  transform: scaleY(0);
+}
+.registration-form-field:focus-within label {
+  color: #5a61ed;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .registration-form-field, body .registration-form .main-form .row .form-field {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: calc((100% - 13px) / 2);
   border-bottom: 1px solid #f2f2f2;
   transition: 0.3s border-color;
   position: relative;
+  opacity: 0;
+  animation: appear 0.5s forwards;
+  animation-delay: var(--appearanceDelay);
 }
 .registration-form-field.without-border, body .registration-form .main-form .row .without-border.form-field {
   border-bottom: none;
@@ -137,12 +167,10 @@
   letter-spacing: -0.3px;
   transition: 0.3s;
   font-weight: 200;
-}
-.registration-form-field:focus-within, body .registration-form .main-form .row .form-field:focus-within {
-  border-color: #5a61ed;
-}
-.registration-form-field:focus-within label, body .registration-form .main-form .row .form-field:focus-within label {
-  color: #5a61ed;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
 }
 .registration-form-field input, body .registration-form .main-form .row .form-field input,
 .registration-form-field select,
@@ -198,7 +226,9 @@ body .registration-form .main-form .row .without-border .form-field select {
 .registration-form-field .radio label + label, body .registration-form .main-form .row .form-field .radio label + label {
   margin-left: 20px;
 }
-.registration-form-field .alert-message, body .registration-form .main-form .row .form-field .alert-message, .registration-form-field .req-message, body .registration-form .main-form .row .form-field .req-message {
+.registration-form-field .alert-message, body .registration-form .main-form .row .form-field .alert-message,
+.registration-form-field .req-message,
+body .registration-form .main-form .row .form-field .req-message {
   pointer-events: none;
   background-color: #f2dede;
   color: #ff2222;
@@ -216,10 +246,14 @@ body .registration-form .main-form .row .without-border .form-field select {
   transform: scaleY(0);
   transform-origin: bottom;
 }
-.registration-form-field .alert-message .point, body .registration-form .main-form .row .form-field .alert-message .point, .registration-form-field .req-message .point, body .registration-form .main-form .row .form-field .req-message .point {
+.registration-form-field .alert-message .point, body .registration-form .main-form .row .form-field .alert-message .point,
+.registration-form-field .req-message .point,
+body .registration-form .main-form .row .form-field .req-message .point {
   color: #ff2222;
 }
-.registration-form-field .alert-message .point.correct, body .registration-form .main-form .row .form-field .alert-message .point.correct, .registration-form-field .req-message .point.correct, body .registration-form .main-form .row .form-field .req-message .point.correct {
+.registration-form-field .alert-message .point.correct, body .registration-form .main-form .row .form-field .alert-message .point.correct,
+.registration-form-field .req-message .point.correct,
+body .registration-form .main-form .row .form-field .req-message .point.correct {
   color: green;
 }
 .registration-form-field:focus-within .req-message, body .registration-form .main-form .row .form-field:focus-within .req-message {
@@ -235,7 +269,28 @@ body .registration-form .main-form .row .without-border .form-field select {
 .registration-form-field[aria-invalid=true] .alert-message, body .registration-form .main-form .row [aria-invalid=true].form-field .alert-message {
   transform: scaleY(1);
 }
+.registration-form-field:focus-within, body .registration-form .main-form .row .form-field:focus-within, .registration-form-field:focus-within[aria-invalid=true] {
+  border-bottom: 1px solid #5a61ed;
+}
+.registration-form-field:focus-within input, body .registration-form .main-form .row .form-field:focus-within input, .registration-form-field:focus-within[aria-invalid=true] input {
+  color: #111111;
+  margin-bottom: 4px;
+}
+.registration-form-field:focus-within .alert-message, body .registration-form .main-form .row .form-field:focus-within .alert-message, .registration-form-field:focus-within[aria-invalid=true] .alert-message {
+  transform: scaleY(0);
+}
+.registration-form-field:focus-within label, body .registration-form .main-form .row .form-field:focus-within label {
+  color: #5a61ed;
+}
 
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 body {
   min-height: 100vh;
   background-color: #f4f5fc;
@@ -278,6 +333,11 @@ body .registration-form .form-name h1 {
   bottom: 22px;
   left: 70px;
   transform: rotate(-180deg);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-height: 80%;
+  max-width: 100%;
 }
 @media (max-width: 700px) {
   body .registration-form .form-name {
@@ -296,19 +356,41 @@ body .registration-form .main-form {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  width: calc(100% - 138px);
 }
 body .registration-form .main-form .background {
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 0;
+  overflow: hidden;
   pointer-events: none;
+}
+body .registration-form .main-form .background img {
+  display: block;
+}
+body .registration-form .main-form .background::after {
+  content: " ";
+  display: block;
+  background: white;
+  height: 200%;
+  width: 200%;
+  bottom: 0;
+  right: 0;
+  transform: rotate(0deg);
+  transform-origin: bottom right;
+  position: absolute;
+  animation: bg-user 3.5s forwards ease-in;
 }
 body .registration-form .main-form .header {
   font-size: 22px;
   line-height: 25px;
   letter-spacing: -0.46px;
   margin-top: 1px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
 }
 body .registration-form .main-form .sub-header {
   font-size: 14px;
@@ -317,6 +399,10 @@ body .registration-form .main-form .sub-header {
   letter-spacing: -0.35px;
   font-weight: 400;
   margin-bottom: 4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 450px;
 }
 body .registration-form .main-form .row {
   display: flex;
@@ -354,6 +440,10 @@ body .registration-form .main-form .footer span {
   margin-bottom: 11px;
   display: block;
   height: fit-content;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 50%;
 }
 body .registration-form .main-form .footer span a {
   color: #5a61ed;
@@ -370,11 +460,15 @@ body .registration-form .main-form .footer .submit {
   font-size: 14px;
   cursor: pointer;
 }
-body .registration-form .main-form .footer .submit:hover, body .registration-form .main-form .footer .submit:focus {
+body .registration-form .main-form .footer .submit:hover, body .registration-form .main-form .footer .submit:focus-visible {
   background-color: #000dff;
 }
 body .registration-form .main-form .footer .submit:active {
   background-color: rgba(90, 97, 237, 0.3960784314);
+}
+body .registration-form .main-form .footer .submit.shake {
+  animation: shake 0.3s;
+  animation-iteration-count: 2;
 }
 @media (max-width: 700px) {
   body .registration-form .main-form .footer {
@@ -388,10 +482,44 @@ body .registration-form .main-form .thanks {
 body .registration-form .main-form .thanks h2 {
   margin: 0;
   letter-spacing: -1.3px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
 }
 body .registration-form .main-form .thanks p {
   font-size: 14px;
   line-height: 16px;
   margin-top: 9px;
   letter-spacing: -0.3px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(5px);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes bg-user {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
 }

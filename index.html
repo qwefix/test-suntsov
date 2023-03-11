@@ -7,43 +7,59 @@
 		<title>Hramchenko test</title>
 		<script src="./bundle.js" defer></script>
 		<link rel="stylesheet" href="./style.css" />
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
 	</head>
 	<body>
-		<form class="registration-form">
+		<form class="registration-form" id="registration-form">
 			<aside class="form-name">
 				<h1>Sign up</h1>
 			</aside>
 			<main class="main-form" id="main-form">
-				<img class="background" src="./assets/UserBg.svg" alt="background" />
+				<div class="background">
+					<img src="./assets/UserBg.svg" alt="background" />
+				</div>
 				<h2 class="header">New user?</h2>
 				<h3 class="sub-header">Use the form below to create your account.</h3>
 				<div class="row">
-					<div class="form-field">
+					<div class="form-field" style="--appearanceDelay: 0s">
 						<label for="first-name">First Name</label>
-						<input autocomplete="given-name" type="text" id="first-name" />
+						<input
+							name="firstName"
+							autocomplete="given-name"
+							type="text"
+							id="first-name"
+						/>
 					</div>
-					<div class="form-field">
+					<div class="form-field" style="--appearanceDelay: 0.5s">
 						<label for="last-name">Last Name</label>
-						<input autocomplete="family-name" type="text" id="last-name" />
+						<input
+							name="lastName"
+							autocomplete="family-name"
+							type="text"
+							id="last-name"
+						/>
 					</div>
 				</div>
 				<div class="row">
-					<div class="form-field">
-						<label for="nationality">Nationality</label>
+					<div class="form-field" style="--appearanceDelay: 1s">
+						<label name="nationality" for="nationality">Nationality</label>
 						<select id="nationality">
 							<option value="American">American</option>
 							<option value="Albanian">Albanian</option>
 							<option value="Belorussian">Belorussian</option>
 						</select>
 					</div>
-					<div class="form-field">
+					<div class="form-field" style="--appearanceDelay: 1.5s">
 						<label for="email">E-mail</label>
 						<input autocomplete="email" type="text" id="email" />
 						<label for="email" class="alert-message"> Email is wrong </label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="form-field without-border">
+					<div class="form-field without-border" style="--appearanceDelay: 2s">
 						<label>Date of Birth</label>
 						<div class="group">
 							<label>
@@ -57,33 +73,45 @@
 							</label>
 						</div>
 					</div>
-					<div class="form-field gender">
+					<div class="form-field gender" style="--appearanceDelay: 2.5s">
 						<label>Gender</label>
 						<div class="radio">
 							<label>
-								<input type="radio" name="Gender" checked="checked" />
+								<input
+									type="radio"
+									name="Gender"
+									value="Male"
+									checked="checked"
+								/>
 								Male
 							</label>
 							<label>
-								<input type="radio" name="Gender" />
+								<input type="radio" name="Gender" value="Female" />
 								Female
 							</label>
 						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="form-field">
+					<div class="form-field" style="--appearanceDelay: 3s">
 						<label for="password">Password</label>
-						<input autocomplete="new-password" type="password" id="password" />
+						<input
+							autocomplete="new-password"
+							type="password"
+							name="password"
+							id="password"
+						/>
 						<label for="password" class="req-message">
 							Checklist <br />
-							<span class="point" id="pass-length">minimal length - 8 symbols </span><br />
+							<span class="point" id="pass-length"
+								>minimal length - 8 symbols </span
+							><br />
 							<span class="point" id="pass-up">uppercase chars</span><br />
 							<span class="point" id="pass-low">lowercase chars</span><br />
 							<span class="point" id="pass-num">numbers</span><br />
 						</label>
 					</div>
-					<div class="form-field">
+					<div class="form-field" style="--appearanceDelay: 3.5s">
 						<label for="confirm-password">Confirm Password</label>
 						<input
 							autocomplete="new-password"
