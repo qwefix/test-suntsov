@@ -4,6 +4,7 @@
 	width: 100%;
 	border-bottom: 1px solid #f2f2f2;
 	transition: 0.3s border-color;
+	position: relative;
 	&.without-border {
 		border-bottom: none;
 	}
@@ -15,23 +16,17 @@
 		transition: 0.3s;
 		font-weight: 200;
 	}
-	&:focus-within {
-		border-color: #5a61ed;
-	}
-	&:focus-within label {
-		color: #5a61ed;
-	}
+
 	input,
 	select {
 		background-color: transparent;
 		border: 0;
 		padding: 0;
-		transition: 0.3s;
-		margin: 6px 0 5px;
+		margin: 5px 0 4px;
 		letter-spacing: 0.5px;
 		font-size: 14px;
 		line-height: 16px;
-		height: 16px;
+		height: 18px;
 		outline: none;
 		position: relative;
 		accent-color: #5a61ed;
@@ -71,5 +66,56 @@
 		label + label {
 			margin-left: 20px;
 		}
+	}
+	.alert-message,
+	.req-message {
+		pointer-events: none;
+		background-color: #f2dede;
+		color: #ff2222;
+		border-radius: 3px;
+		position: absolute;
+		bottom: 100%;
+		left: 0;
+		display: block;
+		width: 100%;
+		line-height: 20px;
+		padding: 0 10px;
+		overflow: hidden;
+		background: #292f35;
+		transition: transform 0.3s;
+		transform: scaleY(0);
+		transform-origin: bottom;
+		.point {
+			color: #ff2222;
+			&.correct {
+				color: green;
+			}
+		}
+	}
+	&:focus-within .req-message {
+		transform: scaleY(1);
+	}
+	&[aria-invalid="true"] {
+		border-bottom: 2px solid #ff2222;
+		input {
+			color: #ff2222;
+			margin-bottom: 3px;
+		}
+		.alert-message {
+			transform: scaleY(1);
+		}
+	}
+	&:focus-within,&:focus-within[aria-invalid="true"] {
+		border-bottom: 1px solid #5a61ed;
+		input {
+			color: #111111;
+			margin-bottom: 4px;
+		}
+		.alert-message {
+			transform: scaleY(0);
+		}
+	}
+	&:focus-within label {
+		color: #5a61ed;
 	}
 }
