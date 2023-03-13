@@ -9,6 +9,9 @@
 	opacity: 0;
 	animation: appear 0.5s forwards;
 	animation-delay: var(--appearanceDelay);
+	@media (max-width: 700px) {
+		width: 100%;
+	}
 	&.without-border {
 		border-bottom: none;
 	}

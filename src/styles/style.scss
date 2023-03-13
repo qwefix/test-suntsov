@@ -11,6 +11,7 @@ body {
 		padding: 20px;
 	}
 	.registration-form {
+		max-width: 100%;
 		width: 665px;
 		height: 481px;
 		margin: 0 auto;
@@ -59,6 +60,9 @@ body {
 			display: flex;
 			flex-direction: column;
 			width: calc(100% - 138px);
+			@media (max-width: 700px) {
+				width: 100%;
+			}
 			.background {
 				position: absolute;
 				bottom: 0;
@@ -167,6 +171,9 @@ body {
 				}
 				@media (max-width: 700px) {
 					flex-direction: column;
+					span{
+						max-width: 100%;
+					}
 				}
 			}
 			.thanks {
